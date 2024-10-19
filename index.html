@@ -284,24 +284,32 @@
     let cursorX = 0;
     let cursorY = 0;
 
-    document.addEventListener('mousemove', (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-    });
+    // Function to check if the device is mobile
+    const isMobile = () => {
+        return /Mobi|Android/i.test(navigator.userAgent);
+    };
 
-    function animateCursor() {
-        // Update cursor position with a slight lag
-        cursorX += (mouseX - cursorX) * 0.2; // Adjust the factor (0.1) for more or less lag
-        cursorY += (mouseY - cursorY) * 0.2; // Adjust the factor (0.1) for more or less lag
+    // If not mobile, start the cursor following effect
+    if (!isMobile()) {
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
 
-        cursor.style.left = `${cursorX}px`;
-        cursor.style.top = `${cursorY}px`;
+        function animateCursor() {
+            // Update cursor position with a slight lag
+            cursorX += (mouseX - cursorX) * 0.1; // Adjust the factor for more or less lag
+            cursorY += (mouseY - cursorY) * 0.1; // Adjust the factor for more or less lag
 
-        requestAnimationFrame(animateCursor); // Call the function again for the next frame
+            cursor.style.left = `${cursorX}px`;
+            cursor.style.top = `${cursorY}px`;
+
+            requestAnimationFrame(animateCursor); // Call the function again for the next frame
+        }
+
+        // Start the animation
+        animateCursor();
     }
-
-    // Start the animation
-    animateCursor();
 </script>
 </body>
 
