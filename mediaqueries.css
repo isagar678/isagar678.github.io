@@ -13,6 +13,9 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .cursor{
+    display: none;
+  }
   #desktop-nav {
     display: none;
   }
@@ -48,6 +51,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .cursor{
+    visibility: none;
+  }
   #contact,
   footer {
     height: 40vh;

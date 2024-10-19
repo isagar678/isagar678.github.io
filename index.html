@@ -60,7 +60,7 @@
       </div>
       <div id="socials-container">
         <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/sagar-bharati-1b032a2b7/'" />
+          onclick="location.href=`https://www.linkedin.com/in/sagar-bharati-1b032a2b7/`" />
         <img src="./assets/github.png" alt="My Github profile" class="icon"
           onclick="location.href='https://github.com/isagar678" />
       </div>
@@ -277,40 +277,7 @@
       </div>
     </nav>
   </footer>
-  <script>
-    const cursor = document.querySelector('.cursor');
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-
-    // Function to check if the device is mobile
-    const isMobile = () => {
-        return /Mobi|Android/i.test(navigator.userAgent);
-    };
-
-    // If not mobile, start the cursor following effect
-    if (!isMobile()) {
-        document.addEventListener('mousemove', (event) => {
-            mouseX = event.clientX;
-            mouseY = event.clientY;
-        });
-
-        function animateCursor() {
-            // Update cursor position with a slight lag
-            cursorX += (mouseX - cursorX) * 0.1; // Adjust the factor for more or less lag
-            cursorY += (mouseY - cursorY) * 0.1; // Adjust the factor for more or less lag
-
-            cursor.style.left = `${cursorX}px`;
-            cursor.style.top = `${cursorY}px`;
-
-            requestAnimationFrame(animateCursor); // Call the function again for the next frame
-        }
-
-        // Start the animation
-        animateCursor();
-    }
-</script>
+<script src="script.js"></script>
 </body>
 
 </html>
