@@ -167,11 +167,12 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  padding-bottom: 4vh;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
 }
+
 
 .section-container {
   display: flex;
@@ -291,6 +292,31 @@ section {
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+.about-containers {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* This will ensure responsiveness if screen is smaller */
+}
+.details-container {
+  flex: 1 1 30%; /* Grow/shrink with a base width */
+  max-width: 30%;
+  box-sizing: border-box;
+}
+@media (max-width: 1000px) {
+  .details-container {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 700px) {
+  .details-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
 
 .about-details-container {
   justify-content: center;
